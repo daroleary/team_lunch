@@ -134,7 +134,7 @@ RSpec.describe Order, type: :model do
 
       expect(order3.valid?).to be_truthy
       expect(restaurant_a.meals.count).to eql(4)
-git
+
       expect(restaurant_a.meals.where(dietary_restriction: DietaryRestriction.vegetarian).sum(:quantity)).to eql(8)
       expect(restaurant_a.meals.where(dietary_restriction: DietaryRestriction.none).sum(:quantity)).to eql(72)
 
